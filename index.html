@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy Policy for Neon Blitz, an Android reflex runner by APPLOBE.">
+  <title>Privacy Policy — Neon Blitz</title>
+  <style>
+    :root {
+      --bg: #070812;
+      --panel: rgba(15, 20, 40, 0.82);
+      --panel-solid: #0f1428;
+      --line: rgba(95, 245, 255, 0.18);
+      --cyan: #5ff5ff;
+      --pink: #ff4fd8;
+      --amber: #ffc857;
+      --text: #eaf4ff;
+      --muted: #a9b8cf;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(900px 520px at 12% -8%, rgba(0, 243, 255, 0.18), transparent 65%),
+        radial-gradient(760px 520px at 88% 6%, rgba(255, 79, 216, 0.14), transparent 62%),
+        radial-gradient(700px 460px at 50% 105%, rgba(131, 56, 236, 0.14), transparent 65%),
+        var(--bg);
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(95, 245, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(95, 245, 255, 0.035) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, #000, transparent 85%);
+      z-index: 0;
+    }
+
+    a { color: var(--cyan); text-underline-offset: 3px; }
+    a:hover { color: #fff; }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      z-index: 10;
+      padding: 10px 16px;
+      border-radius: 8px;
+      background: var(--cyan);
+      color: #04121a;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .skip-link:focus { left: 12px; }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 76px 24px 58px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), var(--pink), transparent);
+      opacity: 0.8;
+    }
+
+    .hero-inner { max-width: 1080px; margin: 0 auto; }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--pink);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 8vw, 5.4rem);
+      line-height: 0.98;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      text-shadow: 0 0 32px rgba(0, 243, 255, 0.35);
+    }
+
+    h1 span { color: var(--cyan); }
+
+    h2.doc-title {
+      margin: 16px 0 8px;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      font-weight: 750;
+    }
+
+    .meta { color: var(--muted); font-size: 0.95rem; margin: 0 0 22px; }
+
+    .lede {
+      max-width: 760px;
+      margin: 0 0 24px;
+      color: #d7e6f7;
+      font-size: 1.05rem;
+    }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .chip {
+      padding: 7px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(95, 245, 255, 0.06);
+      color: #cfe9f5;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+    }
+
+    .layout {
+      position: relative;
+      z-index: 1;
+      max-width: 1180px;
+      margin: 38px auto 0;
+      padding: 0 24px 70px;
+      display: grid;
+      grid-template-columns: 232px minmax(0, 1fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 20px;
+      padding: 24px 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      backdrop-filter: blur(10px);
+    }
+
+    .toc-title {
+      margin: 0 0 12px;
+      color: var(--amber);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .toc nav { display: flex; flex-direction: column; gap: 2px; }
+
+    .toc a {
+      padding: 6px 10px;
+      border-left: 2px solid transparent;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      border-left-color: var(--cyan);
+      color: var(--cyan);
+      background: rgba(95, 245, 255, 0.05);
+    }
+
+    .toc .note {
+      margin: 18px 0 0;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-size: 0.85rem;
+    }
+
+    main { min-width: 0; display: grid; gap: 22px; }
+
+    section.card {
+      scroll-margin-top: 20px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+    }
+
+    .section-tag {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--pink);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    h2.section-title {
+      margin: 0 0 14px;
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      line-height: 1.25;
+    }
+
+    h3 {
+      margin: 26px 0 8px;
+      color: var(--amber);
+      font-size: 1.05rem;
+    }
+
+    p { margin: 0 0 13px; color: var(--muted); }
+    p:last-child { margin-bottom: 0; }
+    ul { margin: 0 0 14px; padding-left: 22px; color: var(--muted); }
+    li { margin-bottom: 7px; }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    table { width: 100%; min-width: 640px; border-collapse: collapse; }
+
+    th, td {
+      padding: 13px 15px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid rgba(95, 245, 255, 0.1);
+      font-size: 0.92rem;
+    }
+
+    th {
+      background: rgba(95, 245, 255, 0.06);
+      color: var(--cyan);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: rgba(95, 245, 255, 0.035); }
+    td strong { color: var(--text); font-weight: 650; }
+
+    .callout {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-left: 3px solid var(--pink);
+      border-radius: 0 12px 12px 0;
+      background: rgba(255, 79, 216, 0.07);
+    }
+
+    .callout p { margin: 0; color: #e5d6ef; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .mini {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(7, 8, 18, 0.55);
+    }
+
+    .mini h3 { margin: 0 0 8px; }
+    .mini p { font-size: 0.92rem; margin: 0; }
+
+    .pill {
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 999px;
+      background: rgba(95, 245, 255, 0.1);
+      color: var(--cyan);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .muted { color: var(--muted); }
+    .small { font-size: 0.88rem; }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 28px 24px 46px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    footer strong { color: var(--cyan); letter-spacing: 0.12em; }
+
+    @media (max-width: 860px) {
+      .layout { grid-template-columns: 1fr; gap: 24px; }
+      .toc { position: static; }
+      .toc nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 560px) {
+      .hero { padding: 54px 18px 44px; }
+      .layout { padding: 0 16px 50px; }
+      section.card { padding: 22px 18px; }
+      .toc nav { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      body { background: #fff; color: #111; }
+      body::before, .hero::after, .toc { display: none; }
+      .hero { padding: 0 0 18px; border-bottom: 2px solid #111; }
+      h1, h2.section-title, h2.doc-title, h3 { color: #111; text-shadow: none; }
+      p, li, td { color: #333; }
+      section.card { border: 1px solid #bbb; box-shadow: none; background: #fff; }
+      th { background: #f2f2f2; color: #111; }
+      a { color: #111; text-decoration: underline; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <p class="eyebrow">APPLOBE presents</p>
+      <h1>NEON <span>BLITZ</span></h1>
+      <h2 class="doc-title">Privacy Policy</h2>
+      <p class="meta">Effective date: November 25, 2026 &nbsp;·&nbsp; Last updated: November 25, 2026</p>
+      <p class="lede">
+        This policy explains what Neon Blitz does with information on your device. In short: your progress is stored locally,
+        you do not need an account, and the only outside service is Google's ad SDK for optional rewarded ads.
+      </p>
+      <div class="chips">
+        <span class="chip">Android app</span>
+        <span class="chip">com.applobe.neonblitz</span>
+        <span class="chip">No account required</span>
+        <span class="chip">Ads only when online</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="toc" aria-label="On this page">
+      <p class="toc-title">On this page</p>
+      <nav>
+        <a href="#summary">1. At a glance</a>
+        <a href="#scope">2. Scope</a>
+        <a href="#on-device">3. Data on your device</a>
+        <a href="#ad-data">4. Ad data</a>
+        <a href="#purposes">5. Why data is used</a>
+        <a href="#sharing">6. Sharing</a>
+        <a href="#permissions">7. Permissions</a>
+        <a href="#retention">8. Retention &amp; deletion</a>
+        <a href="#choices">9. Your choices</a>
+        <a href="#security">10. Security</a>
+        <a href="#children">11. Children</a>
+        <a href="#changes">12. Changes</a>
+        <a href="#contact">13. Contact</a>
+      </nav>
+      <p class="note">Questions? <a href="#contact">Contact us</a>.</p>
+    </aside>
+
+    <main id="main">
+      <section class="card" id="summary">
+        <span class="section-tag">01</span>
+        <h2 class="section-title">At a glance</h2>
+        <ul>
+          <li><strong>No sign-in:</strong> we do not ask for your name, email address, phone number, or contacts.</li>
+          <li><strong>Progress stays local:</strong> scores, achievements, weekly levels, and settings are saved in private app storage on your device.</li>
+          <li><strong>Ads are optional:</strong> the “Watch Ad to Continue” option is hidden when you are offline, and no ad is loaded.</li>
+          <li><strong>One third party:</strong> Google Mobile Ads (AdMob) processes ad-related data under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</li>
+        </ul>
+        <div class="callout">
+          <p>This page is a plain-language summary of the app's behavior and is intended to complement, not replace, the data safety declarations in the Google Play listing.</p>
+        </div>
+      </section>
+
+      <section class="card" id="scope">
+        <span class="section-tag">02</span>
+        <h2 class="section-title">Scope</h2>
+        <p>
+          This policy applies to the Neon Blitz Android application, package <code>com.applobe.neonblitz</code>, published by APPLOBE.
+          It does not cover third-party services reached through ads or the share sheet, or your device's own advertising settings.
+          Those services have their own privacy policies.
+        </p>
+      </section>
+
+      <section class="card" id="on-device">
+        <span class="section-tag">03</span>
+        <h2 class="section-title">Information stored on your device</h2>
+        <p>
+          Neon Blitz uses Android's private <code>SharedPreferences</code> storage. The information below never leaves your device through the app.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Data</th><th>Examples</th><th>Why it is stored</th><th>Sent by the app?</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Settings</strong></td>
+                <td>Sound, music, vibration, screen shake, graphics quality, frame-rate choice</td>
+                <td>To remember your preferences between runs</td>
+                <td><span class="pill">No</span></td>
+              </tr>
+              <tr>
+                <td><strong>Scores</strong></td>
+                <td>Highest score and top run scores</td>
+                <td>To show your best results and history</td>
+                <td><span class="pill">No</span></td>
+              </tr>
+              <tr>
+                <td><strong>Achievements</strong></td>
+                <td>Unlocked tier, points toward the next tier, current earn multiplier</td>
+                <td>To track progression and unlock visual skins</td>
+                <td><span class="pill">No</span></td>
+              </tr>
+              <tr>
+                <td><strong>Weekly levels</strong></td>
+                <td>Completion status and timestamps for Crown, Ace, and Conqueror</td>
+                <td>To show weekly goal progress</td>
+                <td><span class="pill">No</span></td>
+              </tr>
+              <tr>
+                <td><strong>Shared image cache</strong></td>
+                <td>A generated progress image created when you tap “Share Progress”</td>
+                <td>To hand the image to the Android share sheet</td>
+                <td><span class="pill">Only if you choose a recipient app</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small" style="margin-top:14px;">
+          You can remove scores, achievements, and weekly progress with <strong>Settings → Reset progress</strong>. Your settings are kept.
+          Clearing the app's data or uninstalling the app removes everything stored locally.
+        </p>
+      </section>
+
+      <section class="card" id="ad-data">
+        <span class="section-tag">04</span>
+        <h2 class="section-title">Data handled by ads</h2>
+        <p>
+          Neon Blitz includes the Google Mobile Ads SDK (AdMob) to show an optional rewarded ad that restores shields after game over.
+          When you are online, that SDK may collect and share the following categories of data, as described in Google's disclosures:
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Category</th><th>Examples</th><th>Purposes</th><th>Shared?</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Device or other IDs</strong></td>
+                <td>Advertising ID, app set ID, and identifiers for signed-in accounts where applicable</td>
+                <td>Advertising, analytics, fraud prevention</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td><strong>Approximate location</strong></td>
+                <td>General location estimated from an IP address</td>
+                <td>Advertising, analytics, fraud prevention</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td><strong>App interactions</strong></td>
+                <td>App launches, taps, ad interactions, and video views</td>
+                <td>Advertising, analytics, fraud prevention</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td><strong>Diagnostics</strong></td>
+                <td>Launch time, hang rate, energy usage, and performance signals</td>
+                <td>Advertising, analytics, fraud prevention</td>
+                <td>Yes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:14px;">
+          This data is processed by Google's ad SDK under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>
+          and <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google's advertising technologies policy</a>.
+          We do not use the advertising ID ourselves. Data handled by the SDK is encrypted in transit.
+        </p>
+        <div class="callout">
+          <p>If you are offline, the rewarded-ad option is hidden and no ad request is made. You can also simply choose not to watch the ad.</p>
+        </div>
+      </section>
+
+      <section class="card" id="purposes">
+        <span class="section-tag">05</span>
+        <h2 class="section-title">Why the data is used</h2>
+        <div class="grid">
+          <div class="mini">
+            <h3>Advertising or marketing</h3>
+            <p>To display the rewarded ad, support ad delivery, and measure how ads perform.</p>
+          </div>
+          <div class="mini">
+            <h3>Analytics</h3>
+            <p>To understand ad delivery, app performance, and diagnostic signals such as hangs or energy use.</p>
+          </div>
+          <div class="mini">
+            <h3>Fraud prevention, security, and compliance</h3>
+            <p>To detect invalid traffic, protect the ad ecosystem, and enforce platform policies.</p>
+          </div>
+        </div>
+        <p style="margin-top:18px;">
+          The advertising ID in this app is <strong>not</strong> used for app functionality, developer communications, personalization, or account management.
+          The game has no accounts and no personalized content feed.
+        </p>
+      </section>
+
+      <section class="card" id="sharing">
+        <span class="section-tag">06</span>
+        <h2 class="section-title">Who information is shared with</h2>
+        <ul>
+          <li><strong>Google LLC (AdMob):</strong> receives ad-related data described above to deliver and measure ads.</li>
+          <li><strong>Advertising partners:</strong> may receive ad-related data through Google's ad ecosystem, as described in Google's policies.</li>
+          <li><strong>The app you choose in the share sheet:</strong> receives the progress image and text only when you tap “Share Progress” and pick an app. We do not collect information about who you share with.</li>
+        </ul>
+        <p>
+          We do not sell personal information for money, and we do not include separate analytics, crash-reporting, or social-login SDKs in Neon Blitz.
+        </p>
+      </section>
+
+      <section class="card" id="permissions">
+        <span class="section-tag">07</span>
+        <h2 class="section-title">App permissions</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Permission</th><th>Why the app requests it</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>INTERNET</strong></td><td>To load rewarded ads when you choose to watch one</td></tr>
+              <tr><td><strong>ACCESS_NETWORK_STATE</strong></td><td>To check connectivity and hide the ad option while offline</td></tr>
+              <tr><td><strong>VIBRATE</strong></td><td>To provide haptic feedback when vibration is enabled</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:14px;">
+          The app does not request camera, microphone, contacts, precise location, phone, or external storage permissions.
+        </p>
+      </section>
+
+      <section class="card" id="retention">
+        <span class="section-tag">08</span>
+        <h2 class="section-title">Retention and deletion</h2>
+        <ul>
+          <li><strong>On-device data:</strong> kept until you reset progress, clear the app's data, or uninstall the app.</li>
+          <li><strong>Ad data:</strong> retained and handled by Google under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</li>
+          <li><strong>Advertising ID:</strong> can be reset or limited at any time in your Android device's Google Ads settings.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="choices">
+        <span class="section-tag">09</span>
+        <h2 class="section-title">Your choices</h2>
+        <ul>
+          <li>Play offline, or skip the rewarded ad; the game is fully playable without watching ads.</li>
+          <li>Reset or delete your advertising ID in <strong>Android Settings → Google → Ads</strong>. Menu names may vary by device.</li>
+          <li>Limit ad personalization in your Google account's ad settings.</li>
+          <li>Use <strong>Settings → Reset progress</strong> to clear scores, achievements, and weekly levels.</li>
+          <li>Clear app data or uninstall Neon Blitz to remove all locally stored information.</li>
+          <li>Contact us to ask about data or request deletion assistance.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="security">
+        <span class="section-tag">10</span>
+        <h2 class="section-title">Security</h2>
+        <p>
+          Progress and settings are stored in Android's private app storage, and ad-related data handled by the ad SDK is encrypted in transit.
+          No system can be guaranteed completely secure, so please keep your device locked and up to date.
+        </p>
+      </section>
+
+      <section class="card" id="children">
+        <span class="section-tag">11</span>
+        <h2 class="section-title">Children's privacy</h2>
+        <p>
+          Neon Blitz is not directed to children under 13, or under 16 in regions where a higher age applies.
+          We do not knowingly collect personal information from children. If you believe a child has provided personal information through the app,
+          please contact us so we can address it.
+        </p>
+      </section>
+
+      <section class="card" id="changes">
+        <span class="section-tag">12</span>
+        <h2 class="section-title">Changes to this policy</h2>
+        <p>
+          We may update this policy when the app or its SDKs change. The “Last updated” date at the top of this page will change,
+          and material changes will be reflected in the app's Google Play data safety declaration.
+        </p>
+      </section>
+
+      <section class="card" id="contact">
+        <span class="section-tag">13</span>
+        <h2 class="section-title">Contact</h2>
+        <p>
+          For questions about this policy or requests about your data, contact APPLOBE at
+          <a href="mailto:privacy@example.com">privacy@example.com</a>. We aim to respond within 30 days.
+        </p>
+        <p class="small">
+          Replace the placeholder email address above with your real support address before publishing this page.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p><strong>APPLOBE</strong> &nbsp;·&nbsp; SHARP CODE · PURE PLAY</p>
+    <p>Neon Blitz Privacy Policy &nbsp;·&nbsp; Effective November 25, 2026</p>
+  </footer>
+</body>
+</html>
